@@ -1,6 +1,7 @@
-FROM node:20.17.0
+FROM node:14
 WORKDIR /app
 COPY package*.json ./
+RUN chown -R 110:120 /.npm
 RUN npm install
 COPY . .
 EXPOSE 3000
